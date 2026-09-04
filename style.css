@@ -1,0 +1,263 @@
+
+@view-transition {
+  navigation: auto;
+}
+
+/* Valgfritt: Bestem hvor lang tid fade-effekten skal ta */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+}
+
+/* Navigasjonsmeny */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  padding: 15px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-bottom: none;
+  box-shadow: none;
+  z-index: 10; /* Sikrer at den ligger over overlay og bakgrunn */
+}
+
+.logo-img{
+  pointer-events: none; /* Gjør at musen "går rett igjennom" bildet uten å trigge noe */
+  transform: none !important;
+}
+
+/*kommentert bort for å isten bruke design til minecraft knappene.*/
+.nav-button {
+background-color: transparent;
+  color: #E2C889;
+  border: none;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+  will-change: transform;
+}
+
+.nav-button:hover {
+background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  color: #ffffff;
+  transform: scale(1.15);
+}
+
+/* Klasse for å markere den siden man er på */
+.nav-button.active {
+  background-color: #E2C889;
+  color: #1a1a1a;
+  border-color: #E2C889;
+}
+
+  .hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://github.com/MikaelGrinnbo/TexturePacks/releases/download/img/Kopi.av.2026-08-23_23.39.19.png?'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /*Gjør bakgrundsbildet mørkere*/
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .hero-title {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+  }
+
+  .hero-splash {
+    color: #ffff00;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: -10px;
+    margin-left: 150px;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    animation: splash-pulse 0.6s infinite alternate;
+  }
+
+  @keyframes splash-pulse {
+    0% { transform: rotate(-15deg) scale(1); }
+    100% { transform: rotate(-15deg) scale(1.15); }
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .top-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .copy-btn, .map-btn {
+    background-color: #7a7a7a;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: 2px solid #333;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    transition: background-color 0.2s, font-size 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+
+  /*Fargebytte når man holder mus over knapp*/
+  .copy-btn:hover, .map-btn:hover {
+    background-color: #8f8f8f;
+  }
+
+  .mc-footer-disclaimer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    font-size: 11px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    z-index: 2;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /*fargen på sidene*/
+  body {
+    margin: 0;
+    padding: 0px;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+
+  .roadmap-container {
+    max-width: 1200px;
+    margin: 140px auto 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .roadmap-header {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #E2C889;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  }
+
+  .roadmap-card {
+    background-color: #2b2b2b;
+    border: 2px solid #444;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  }
+
+  .roadmap-card:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .roadmap-image-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    height: 250px;
+    overflow: hidden;
+    background-color: #111;
+    padding: 0; /* Fjernet padding slik at bildet fyller hele rommet */
+    box-sizing: border-box;
+  }
+
+  .roadmap-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    
+    /* Grå ramme som matcher kortets ellers mørke stil */
+    border: 3px solid #555; 
+    box-sizing: border-box;
+  }
+
+  .roadmap-content {
+    flex: 2;
+    padding: 25px;
+  }
+
+  .roadmap-month {
+    font-size: 24px;
+    font-weight: bold;
+    color: #E2C889;
+    margin-bottom: 10px;
+  }
+
+  .roadmap-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #dddddd;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .roadmap-card, .roadmap-card:nth-child(even) {
+      flex-direction: column;
+    }
+    .roadmap-image-container {
+      max-width: 100%;
+      height: 200px;
+    }
+  }
