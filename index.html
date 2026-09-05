@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="noscroll.css">
@@ -9,8 +10,8 @@
 
 <div class="navbar">
   <img src="https://github.com/MikaelGrinnbo/The-Coven_Resources/releases/download/img/THE_COVENframe.webp" alt="Logo" class="logo-img" width="100px" height="auto">
-  <a href="index.html" class="nav-button">Hjem</a>
-  <a href="roadmap.html" class="nav-button">Roadmap</a>
+<a href="index.html" class="nav-button" data-direction="right">Hjem</a>
+  <a href="roadmap.html" class="nav-button" data-direction="left">Roadmap</a>
 </div>
 
 <div class="hero-container">
@@ -23,7 +24,7 @@
     <div class="button-group">
       <div class="top-buttons">
         <button class="copy-btn" id="ipButton" onclick="copyIP()">Play Now</button>
-        <a href="http://185.206.150.88:13352/" target="_blank" class="map-btn">Server Map</a>
+        <a href="map.html" class="map-btn">Server Map</a>
       </div>
       <button class="copy-btn" id="bedrockPortButton" onclick="copyBedrockPort()">Bedrock Port</button>
     </div>
