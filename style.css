@@ -1,9 +1,12 @@
+/* Grunnleggende oppsett og aktivering av scrolling i iframe på mobil */
 body, html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #1a1a1a;
   color: #ffffff;
+  overflow-y: auto; /* Tvinger frem vertikal scrolling */
+  -webkit-overflow-scrolling: touch; /* Fikser fryst scrolling på iOS/mobiler */
 }
 @view-transition {
   navigation: auto;
@@ -193,7 +196,7 @@ background: transparent !important;
 }
 
   /*fargen på sidene*/
-  body {
+   {
     margin: 0;
     padding: 0px;
     font-family: Arial, sans-serif;
@@ -201,7 +204,7 @@ background: transparent !important;
     color: #ffffff;
   }
 
-  .index-body {
+  .index- {
     position: fixed;
     inset: 0;
     width: 100%;
