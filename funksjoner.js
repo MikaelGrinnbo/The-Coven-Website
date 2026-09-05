@@ -1,8 +1,12 @@
 
 async function copyText(text) {
   if (navigator.clipboard && window.isSecureContext) {
-    await navigator.clipboard.writeText(text);
-    return;
+    try {
+      await navigator.clipboard.writeText(text);
+      return;
+    } catch (err) {
+      console.warn("Clipboard API feilet, prøver fallback", err);
+    }
   }
 
   const tempInput = document.createElement("textarea");
