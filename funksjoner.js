@@ -1,35 +1,19 @@
 
-async function copyText(text) {
-  if (navigator.clipboard && window.isSecureContext) {
-    try {
-      await navigator.clipboard.writeText(text);
-      return;
-    } catch (err) {
-      console.warn("Clipboard API feilet, prøver fallback", err);
-    }
-  }
+function copyIP() {
+  const ip = "play.thecoven.se";
+  const btn = document.getElementById("ipButton");
+  const originalText = "Play Now";
 
   const tempInput = document.createElement("textarea");
-  tempInput.value = text;
-  tempInput.setAttribute("readonly", "");
-  tempInput.style.position = "fixed";
-  tempInput.style.opacity = "0";
+  tempInput.value = ip;
   document.body.appendChild(tempInput);
+
   tempInput.select();
-
-  const copied = document.execCommand("copy");
-  tempInput.remove();
-
-  if (!copied) {
-    throw new Error("Kopiering ble avvist av nettleseren");
-  }
-}
-
-async function copyIP() {
-  const btn = document.getElementById("ipButton");
+  tempInput.setSelectionRange(0, 99999);
 
   try {
-    await copyText("play.thecoven.se");
+    document.execCommand("copy");
+
     btn.innerText = "IP kopiert!";
     btn.style.backgroundColor = "#5c9c5c";
 
@@ -44,19 +28,27 @@ async function copyIP() {
       btn.style.backgroundColor = "";
     }, 4500);
   } catch (err) {
-    console.error("Feil under kopiering", err);
-    btn.innerText = "Kopiering feilet";
-    setTimeout(function() {
-      btn.innerText = "Play Now";
-    }, 2000);
+    console.error('Feil under kopiering', err);
   }
+
+  document.body.removeChild(tempInput);
 }
 
-async function copyBedrockPort() {
+function copyBedrockPort() {
+  const port = "12028";
   const btn = document.getElementById("bedrockPortButton");
+  const originalText = "Bedrock Port";
+
+  const tempInput = document.createElement("textarea");
+  tempInput.value = port;
+  document.body.appendChild(tempInput);
+
+  tempInput.select();
+  tempInput.setSelectionRange(0, 99999);
 
   try {
-    await copyText("12028");
+    document.execCommand("copy");
+
     btn.innerText = "Port kopiert!";
     btn.style.backgroundColor = "#5c9c5c";
 
@@ -65,12 +57,10 @@ async function copyBedrockPort() {
       btn.style.backgroundColor = "";
     }, 2000);
   } catch (err) {
-    console.error("Feil under kopiering", err);
-    btn.innerText = "Kopiering feilet";
-    setTimeout(function() {
-      btn.innerText = "Bedrock Port";
-    }, 2000);
+    console.error('Feil under kopiering', err);
   }
+
+  document.body.removeChild(tempInput);
 }
 
 const mapFrame = document.querySelector(".map-page iframe");
