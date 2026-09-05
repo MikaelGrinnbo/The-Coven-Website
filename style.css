@@ -194,7 +194,7 @@ background: transparent !important;
 }
 
   /*fargen på sidene*/
-   {
+  .index-body {
     margin: 0;
     padding: 0px;
     font-family: Arial, sans-serif;
