@@ -170,7 +170,7 @@ background: transparent !important;
 /* Standard oppførsel (når mobilen holdes vanlig/stående) */
 .mc-footer-disclaimer {
   position: fixed;
-  bottom: 50px; /* Skyver teksten opp forbi blindsonen til Google Sites */
+  bottom: 0;
   left: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.4);
