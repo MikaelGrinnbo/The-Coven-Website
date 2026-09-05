@@ -161,21 +161,30 @@ background: transparent !important;
     background-color: #8f8f8f;
   }
 
+/* Standard oppførsel (når mobilen holdes vanlig/stående) */
+.mc-footer-disclaimer {
+  position: fixed;
+  bottom: 50px; /* Skyver teksten opp forbi blindsonen til Google Sites */
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-size: 11px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  z-index: 100;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Egen regel NÅR skjermen er lavere enn 500 piksler (Landskapsmodus) */
+@media (max-height: 500px) {
   .mc-footer-disclaimer {
-     position: fixed;
-    bottom: 50px;
-    left: auto;
-    right: auto;
-    width: 50%;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #ffffff;
-    font-size: 11px;
-    padding: 10px 15px;
-    box-sizing: border-box;
-    z-index: 2;
-    text-align: center;
-    line-height: 1.5;
+    bottom: 0; /* Legger den helt ned til kanten igjen */
+    padding: 4px 15px; /* Gjør selve det svarte båndet smalere */
+    font-size: 9px; /* Gjør teksten mindre så den tar mindre plass */
   }
+}
 
   /*fargen på sidene*/
   body {
