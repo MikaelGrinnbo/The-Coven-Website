@@ -162,7 +162,7 @@ background: transparent !important;
   }
 
   .mc-footer-disclaimer {
-    position: absolute;
+     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -175,7 +175,6 @@ background: transparent !important;
     text-align: center;
     line-height: 1.5;
   }
-
 
   /*fargen på sidene*/
   body {
@@ -190,14 +189,14 @@ background: transparent !important;
     position: fixed;
     inset: 0;
     width: 100%;
-    height: 100dvh;
+    height: 100%;
     overflow: hidden;
     overscroll-behavior: none;
     touch-action: none;
   }
 
   .index-body .hero-container {
-    height: 100dvh;
+    height: 100%;
   }
 
   .index-page {
