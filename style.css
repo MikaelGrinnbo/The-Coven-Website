@@ -162,14 +162,14 @@ background: transparent !important;
   }
 
   .mc-footer-disclaimer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
     color: #ffffff;
     font-size: 11px;
-    padding: 10px;
+    padding: 10px 15px;
     box-sizing: border-box;
     z-index: 2;
     text-align: center;
