@@ -163,9 +163,10 @@ background: transparent !important;
 
   .mc-footer-disclaimer {
      position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    bottom: 20px;
+    left: auto;
+    right: auto;
+    width: 50%;
     background-color: rgba(0, 0, 0, 0.4);
     color: #ffffff;
     font-size: 11px;
